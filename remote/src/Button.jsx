@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const Button = () => {
+const Button = () => {
 	const [state, setState] = useState(0);
 	return (
 		<div>
@@ -10,3 +10,5 @@ export const Button = () => {
 		</div>
 	);
 };
+
+export default Button;
