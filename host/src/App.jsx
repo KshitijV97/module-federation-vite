@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
 import Button from "remoteApp/Button"; // `remoteApp` is substituted by Configuration
+import useStore from "remoteApp/store";
 
 function App() {
-	const [count, setCount] = React.useState(0);
+	const [count, setCount] = useStore(0);
 
 	return (
 		<>

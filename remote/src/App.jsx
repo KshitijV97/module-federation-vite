@@ -1,9 +1,10 @@
 import React from "react";
 import Button from "./Button";
 import "./App.css";
+import useCount from "./store";
 
 function App() {
-	const [count, setCount] = React.useState(0);
+	const [count, setCount] = useCount(0);
 	return (
 		<>
 			<h1>Remote</h1>
