@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
-import Button from "remoteApp/Button"; // `remoteApp` is substituted by Configuration
 import useStore from "remoteApp/store";
+
+const FederatedButton = React.lazy(() => import("remoteApp/Button"));
 
 function App() {
 	const [count, setCount] = useStore(0);
@@ -10,7 +11,9 @@ function App() {
 		<>
 			<h1>Host application</h1>
 			<div className='card'>
-				<Button />
+				<React.Suspense fallback={<h1>Loading federated module....</h1>}>
+					<FederatedButton />
+				</React.Suspense>
 				<button onClick={() => setCount((count) => count + 1)}>
 					count is {count}
 				</button>
